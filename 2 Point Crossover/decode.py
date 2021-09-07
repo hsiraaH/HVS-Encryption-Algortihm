@@ -1,15 +1,21 @@
 import csv
+
 l = []
 lb = []
-with open('assets/binary.csv','r')as file:
+with open('assets/cross_out.csv','r')as file:
     reader = csv.reader(file)
     for row in reader:
         l.append(row)
 
-l = list(l[0])
+l1 = list(l[0])
+l = []
 
-l1 = list(l[:len(l)//2])
-l2 = list(l[len(l)//2:])
+with open('assets/cross_out2.csv','r')as file:
+    reader = csv.reader(file)
+    for row in reader:
+        l.append(row)
+
+l2 = list(l[0])
 
 out1 = list()
 out2 = list()
@@ -50,13 +56,12 @@ for i in range(0, iter_limit):
     out1.append(ostr1)
     out2.append(ostr2)
 
-if(len(l1) != len(l2)):
-    out2.append(l2[iter_limit])
+l_final = out1 + out2
 
-with open('assets/cross_out.csv', 'w', newline='') as file:
+if(len(l1) != len(l2)):
+    l_final.append(l2[iter_limit])
+    
+with open('assets/decode.csv', 'w', newline='') as file:
     writer = csv.writer(file)
-    writer.writerow(out1)
-with open('assets/cross_out2.csv', 'w', newline='') as file:
-    writer = csv.writer(file)
-    writer.writerow(out2)
-print("crossover done")
+    writer.writerow(l_final)
+print("decode done")
