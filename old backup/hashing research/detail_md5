@@ -1,0 +1,35 @@
+128 bit 
+designed for digital signatures in 1991 by Ronalt Rivert
+
+1. collision not be there
+
+2. should not possible to create hash like same
+
+
+step1: Padding Bits
+    *   converting input, for compaitable wiht hash function
+    *   should be 64bits
+    *   first bit added is '1' and rest are all '0's for round off the extra char
+    *   
+step2: Padding Length
+
+step3: Initialize Message Digest Buffer
+
+step4: Proces Each Block
+
+step5: 
+
+
+
+s1: append padding bits 
+s2: append 64 bits 
+
+Plain text = 512 -64 = 448 
+
+s3: Initialize Buffer 
+1. A 32 bits function(F), T[i], left shift (1..16)steps1
+2. B 32 bits function(g), T[i], left shift (16..32)steps
+3. C 32 bits function(h), T[i], left shift (32..48)setps
+4. D 32 bits function(i), T[i], left shift (48..64)sets
+
+s4: process each block 
